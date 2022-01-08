@@ -5,6 +5,7 @@ $bg-color: black;
 $body-font: 'aveX', sans-serif;
 $serif-font: 'cantique';
 $font-color: black;
+$alt-color: white;
 $green: #9CBB3E;
 
 @mixin shadow($color){
@@ -41,6 +42,31 @@ body{
 
 
 }
+.buttons{
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	text-align: center;
+	margin-bottom: 3em;
+
+	.up,
+	.down{
+		z-index: 2;
+		padding: 1em;
+		filter: drop-shadow(0 0 0.25em white);
+	}
+
+}
+.info-button{
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 1em;
+
+	img{
+		width:80px;
+	}
+}
 
 main{
 	// position: absolute;
@@ -53,37 +79,37 @@ main{
 	text-align: center;
 	// background-color: green;
 
+	.moreInfo{
+		color: $alt-color;
+		position: absolute;
+		bottom: 2em;
+		right: 2em;
+		padding: 1em;
+		@include border(white);
+
+	}
 
 }
 
 
 .side-bar{
-	width: 25vw;
+	// width: 25vw;
+	width: 0;
+	overflow-y: hidden;
 	height: 100vh;
 	display: flex;
 	background-color:$green;
 	color: $font-color;
 	flex-direction: column;
+	position: absolute;
+	top: 0;
+	left: 0;
 
 	justify-content: space-between;
 	z-index: 1;
 	@include softborder(black);
 	@include insetshadow;
 
-	.up,
-	.down{
-		z-index: 2;
-		padding: 1em;
-		filter: drop-shadow(0 0 0.25em white);
-	}
-
-	.buttons{
-		display: flex;
-		flex-direction: column;
-		align-self: center;
-		text-align: center;
-		margin-bottom: 3em;
-	}
 
 	a{
 		padding: 0.5em;
@@ -92,13 +118,13 @@ main{
 		background-color: black;
 		@include border(black);
 		@include shadow(white);
-
 	}
+
 	.links{
 		margin-top: 1em;
 		display: flex;
 		justify-content: space-between;
-
+		margin: 3em 2em;
 	}
 
 
@@ -106,11 +132,6 @@ main{
 		margin: 0 2em;
 	}
 
-	#logo{
-		margin: 1em;
-		width: 12vw;
-		text-align: center;
-	}
 
 	.bio{
 		align-self: flex-start;
@@ -118,7 +139,14 @@ main{
 		font-size: 1.5em;
 		line-height: 1.25;
 		margin: 2em 0;
+	}
 
+	.close{
+		padding: 1em;
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: 1.5em;
 	}
 
 

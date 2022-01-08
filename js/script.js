@@ -4,14 +4,15 @@ const up = document.querySelector(".up")
 const title = document.querySelector(".titles")
 const siteName = document.querySelector(".siteName")
 const left = document.querySelector(".side-bar")
-
+const infoButton = document.querySelector(".infoButton")
+const close = document.querySelector(".close")
+const moreInfo = document.querySelector(".moreInfo")
 
 
 let selectIndex = 0;
 let cellCount = 6;
 let cellWidth;
-// let cellDist = 60;
-// let r;
+
 
 let picNum = 0;
 
@@ -34,19 +35,29 @@ let colors = [
 
 
 const siteNames = [
-  {copy:"invisible art handler ↗", url:"https://invisible.art-handler.com/"},
-  {copy: "icky gooey heart chamber ↗", url:"https://ickygoohe.art/" },
-  {copy:"black people dancing on the internet ↗", url:"https://www.residency-blackpeopledancingontheinternet.com/"},
-  {copy:"ingridraphael.com ↗", url:"https://www.ingrid-raphael.com/"},
-  {copy:"black beyond: origins ↗", url:"http://origins.blackbeyond.xyz/"},
-  {copy:"moo's memory farm ↗", url:"http://teeangel.cloud/" }
+  {copy:"invisible art handler ↗", url:"https://invisible.art-handler.com/", projectType: "website, AR"},
+  {copy: "icky gooey heart chamber ↗", url:"https://ickygoohe.art/", projectType: "website, 3D" },
+  {copy:"black people dancing on the internet ↗", url:"https://www.residency-blackpeopledancingontheinternet.com/", projectType: "website"},
+  {copy:"ingridraphael.com ↗", url:"https://www.ingrid-raphael.com/", projectType: "website"},
+  {copy:"black beyond: origins ↗", url:"http://origins.blackbeyond.xyz/", projectType: "website, 3D animation"},
+  {copy:"moo's memory farm ↗", url:"http://teeangel.cloud/", projectType: "website, 3D" }
 ]
+
 
 window.addEventListener('load', function(){
   siteName.style.visibility = "hidden"
+  moreInfo.style.visibility = "hidden"
   randomColor()
 })
 
+function playAudio (){
+  audio = document.querySelector("#click")
+  audio.play()
+}
+function quack(){
+  clack = document.querySelector("#clack")
+  clack.play()
+}
 
 
 
@@ -56,6 +67,8 @@ function spinTheWheel (){
 	let r = Math.round( (cellWidth / 2) / Math.tan(Math.PI/ angle));
 	carousel.style.transform = 'translateZ(-100px) rotateX(' + angle + 'deg)';
   siteName.style.visibility = "visible"
+  siteName.style.transition = "visibility 1s"
+  moreInfo.style.visibility = "visible"
 }
 
 function nextSlide (){
@@ -88,11 +101,11 @@ function randomColor(){
 
   });
 
-
-
 }
 
 const link = document.createElement("a")
+const details = document.createElement("p")
+
 
 const updateSection = function (){
 
@@ -100,8 +113,13 @@ const updateSection = function (){
     link.innerHTML = siteNames[picNum].copy
     link.target = "_blank"
 
-siteName.appendChild(link)
+    details.innerHTML = siteNames[picNum].projectType
+
+    siteName.appendChild(link)
+    moreInfo.appendChild(details)
+
 randomColor()
+
 }
 
 
@@ -110,9 +128,7 @@ up.addEventListener('click', function(){
 	selectIndex--;
 	spinTheWheel();
   prevSlide();
-
-
-	console.log("touched it");
+  quack()
 })
 
 
@@ -120,7 +136,8 @@ down.addEventListener('click', function(){
 	selectIndex++;
 	spinTheWheel();
   nextSlide();
-	console.log("touched tit")
+  playAudio();
+
 
 })
 
@@ -129,6 +146,7 @@ document.addEventListener("keyup", function(event){
 		selectIndex++
 		spinTheWheel()
     nextSlide()
+    playAudio();
 
 	}
 
@@ -136,6 +154,31 @@ document.addEventListener("keyup", function(event){
 		selectIndex --
 		spinTheWheel()
     prevSlide()
+    quack()
 
 	}
 })
+
+// info side bar
+
+
+infoButton.addEventListener("click", function (){
+  if (window.outerWidth <= 414 || window.outerWidth <= 800){
+    left.style.width ="100vw"
+    left.style.transition = "width 1s"
+  } else{
+    left.style.width = "25vw"
+      left.style.transition = "width 1.5s"
+  }
+})
+
+close.addEventListener("click", function(){
+  left.style.width = "0"
+})
+
+
+//
+// window.addEventListener("resize", function(){
+//
+//   }
+// })
