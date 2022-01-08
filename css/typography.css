@@ -1,0 +1,9 @@
+@font-face{
+	font-family: "aveX";
+	src: url(./assets/AvenueX.otf);
+}
+
+@font-face{
+	font-family: "cantique";
+	src: url(./assets/Cantique-Normal.woff2), url(./assets/Cantique-Normal.woff);
+}

@@ -1,0 +1,236 @@
+@use "reset";
+@use "typography";
+
+$bg-color: black;
+$body-font: 'aveX', sans-serif;
+$serif-font: 'cantique';
+$font-color: black;
+$green: #9CBB3E;
+
+@mixin shadow($color){
+	filter: drop-shadow(0 0 3px $color);
+}
+
+@mixin border($color){
+	border-radius: 50px;
+	border: 1px solid $color;
+}
+
+@mixin softborder($color){
+	border-radius: 10px;
+	border: 2px solid $color;
+}
+
+@mixin flexalign{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+}
+
+@mixin insetshadow{
+	box-shadow: inset 0.1em 0.1em 1em black;
+}
+
+body{
+	background-color: $bg-color;
+	margin: 0;
+	font-family: $body-font;
+	display: flex;
+	overflow-y: hidden;
+
+
+}
+
+main{
+	// position: absolute;
+	//
+	// top: 0;
+	// right: 0;
+
+	width: 80vw;
+	height: 100%;
+	text-align: center;
+	// background-color: green;
+
+
+}
+
+
+.side-bar{
+	width: 25vw;
+	height: 100vh;
+	display: flex;
+	background-color:$green;
+	color: $font-color;
+	flex-direction: column;
+
+	justify-content: space-between;
+	z-index: 1;
+	@include softborder(black);
+	@include insetshadow;
+
+	.up,
+	.down{
+		z-index: 2;
+		padding: 1em;
+		filter: drop-shadow(0 0 0.25em white);
+	}
+
+	.buttons{
+		display: flex;
+		flex-direction: column;
+		align-self: center;
+		text-align: center;
+		margin-bottom: 3em;
+	}
+
+	a{
+		padding: 0.5em;
+		color: white;
+		text-decoration: none;
+		background-color: black;
+		@include border(black);
+		@include shadow(white);
+
+	}
+	.links{
+		margin-top: 1em;
+		display: flex;
+		justify-content: space-between;
+
+	}
+
+
+	.about{
+		margin: 0 2em;
+	}
+
+	#logo{
+		margin: 1em;
+		width: 12vw;
+		text-align: center;
+	}
+
+	.bio{
+		align-self: flex-start;
+		font-family: $body-font;
+		font-size: 1.5em;
+		line-height: 1.25;
+		margin: 2em 0;
+
+	}
+
+
+}
+
+
+
+
+.siteName{
+width:20vw;
+z-index: 2;
+padding: 1em;
+text-align: center;
+position: fixed;
+bottom: 3em;
+
+a{
+	text-decoration: none;
+	color: $font-color;
+}
+
+}
+
+
+.titles{
+	border: 1px solid black;
+	border-radius: 60px;
+	@include insetshadow;
+
+}
+
+
+
+
+.bigBox,
+.carousel{
+		z-index: 1;
+		@include flexalign;
+}
+
+
+.bigBox{
+	// background-color: red;
+	height: 100vh;
+	// margin: 1em 0;
+}
+.container{
+	position: relative;
+	perspective: 1000px;
+	width: 50vw;
+	height: 50vh;
+	// margin: 2em auto;
+
+}
+
+.carousel{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 3em;
+	left: 0;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+
+}
+
+.cell{
+	position: absolute;
+	margin: 2em auto;
+	width: 40vw;
+	height: 40vh;
+
+	background-color: rgba(0, 0, 0, 0.65);
+
+	text-align: center;
+	overflow: hidden;
+
+	@include softborder($green);
+	@include flexalign;
+
+	img{
+		filter: opacity(80%);
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+
+}
+
+.cell:nth-child(1){
+	transform: rotateX(0deg)translateZ(34.5vh);
+
+}
+
+.cell:nth-child(2){
+	transform: rotateX(60deg)translateZ(34.5vh);
+
+}
+
+.cell:nth-child(3){
+	transform: rotateX(120deg)translateZ(34.5vh);
+}
+
+.cell:nth-child(4){
+	transform: rotateX(180deg)translateZ(34.5vh);
+
+}
+
+.cell:nth-child(5){
+	transform: rotateX(240deg)translateZ(34.5vh);
+}
+
+.cell:nth-child(6){
+	transform: rotateX(300deg)translateZ(34.5vh);
+}
