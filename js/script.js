@@ -1,6 +1,6 @@
 
-const down = document.querySelector(".down")
-const up = document.querySelector(".up")
+const down = document.querySelector(".bottom")
+const up = document.querySelector(".top")
 const title = document.querySelector(".titles")
 const siteName = document.querySelector(".siteName")
 const left = document.querySelector(".side-bar")
@@ -9,8 +9,9 @@ const close = document.querySelector(".close")
 const moreInfo = document.querySelector(".moreInfo")
 
 
+
 let selectIndex = 0;
-let cellCount = 6;
+let cellCount = 9;
 let cellWidth;
 
 
@@ -35,12 +36,15 @@ let colors = [
 
 
 const siteNames = [
-  {copy:"invisible art handler ↗", url:"https://invisible.art-handler.com/", projectType: "website, AR"},
-  {copy: "icky gooey heart chamber ↗", url:"https://ickygoohe.art/", projectType: "website, 3D" },
-  {copy:"black people dancing on the internet ↗", url:"https://www.residency-blackpeopledancingontheinternet.com/", projectType: "website"},
-  {copy:"ingridraphael.com ↗", url:"https://www.ingrid-raphael.com/", projectType: "website"},
-  {copy:"black beyond: origins ↗", url:"http://origins.blackbeyond.xyz/", projectType: "website, 3D animation"},
-  {copy:"moo's memory farm ↗", url:"http://teeangel.cloud/", projectType: "website, 3D" }
+  {copy:"invisible art handler", url:"https://invisible.art-handler.com/", projectType: "website, AR"},
+  {copy: "icky gooey heart chamber", url:"https://ickygoohe.art/", projectType: "website, 3D" },
+  {copy:"#black people dancing on the internet", url:"https://www.residency-blackpeopledancingontheinternet.com/", projectType: "website"},
+  {copy:"ingridraphael.com", url:"https://www.ingrid-raphael.com/", projectType: "website"},
+  {copy:"black beyond: origins", url:"http://origins.blackbeyond.xyz/", projectType: "website, 3D animation"},
+  {copy: "how to begin again", url:"", projectType: "3D Illustration"},
+  {copy: "from the rupture", url:"https://ftr.eyebeam.org/", projectType: "3D animation, design system"},
+  {copy: "control", url:"https://cntrl-study.glitch.me", projectType: "package design"},
+  {copy: "riso posters", url: "", projectType: "print, 3D design"}
 ]
 
 
@@ -50,6 +54,7 @@ window.addEventListener('load', function(){
   randomColor()
 })
 
+// play audio
 function playAudio (){
   audio = document.querySelector("#click")
   audio.play()
@@ -58,18 +63,27 @@ function quack(){
   clack = document.querySelector("#clack")
   clack.play()
 }
+function doorOpen(){
+  open = document.querySelector("#door-open")
+  open.play()
+}
+function doorClose(){
+  doorclose = document.querySelector("#door-close")
+  doorclose.play()
+}
 
-
-
+// carousel
 function spinTheWheel (){
 	// let cellWidth = window.innerWidth * 2;
 	let angle = selectIndex / cellCount * -360;
 	let r = Math.round( (cellWidth / 2) / Math.tan(Math.PI/ angle));
-	carousel.style.transform = 'translateZ(-100px) rotateX(' + angle + 'deg)';
+	carousel.style.transform = 'translateZ(-488px) rotateX(' + angle + 'deg)';
   siteName.style.visibility = "visible"
   siteName.style.transition = "visibility 1s"
   moreInfo.style.visibility = "visible"
 }
+
+// update info
 
 function nextSlide (){
   picNum = picNum + 1
@@ -89,7 +103,7 @@ function prevSlide(){
   updateSection()
 }
 
-
+// random colors
 function randomColor(){
   let randCol = colors[Math.floor(Math.random() * colors.length)]
   title.style.backgroundColor = randCol
@@ -102,7 +116,7 @@ function randomColor(){
   });
 
 }
-
+// create a tag / fill text from array
 const link = document.createElement("a")
 const details = document.createElement("p")
 
@@ -159,7 +173,7 @@ document.addEventListener("keyup", function(event){
 	}
 })
 
-// info side bar
+// info side bar open and close
 
 
 infoButton.addEventListener("click", function (){
@@ -170,10 +184,12 @@ infoButton.addEventListener("click", function (){
     left.style.width = "25vw"
       left.style.transition = "width 1.5s"
   }
+  doorOpen()
 })
 
 close.addEventListener("click", function(){
   left.style.width = "0"
+  doorClose()
 })
 
 

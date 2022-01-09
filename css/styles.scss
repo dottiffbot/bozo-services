@@ -1,5 +1,6 @@
 @use "reset";
 @use "typography";
+@use "modal";
 
 $bg-color: black;
 $body-font: 'aveX', sans-serif;
@@ -7,6 +8,7 @@ $serif-font: 'cantique';
 $font-color: black;
 $alt-color: white;
 $green: #9CBB3E;
+$phone-width: 500px;
 
 @mixin shadow($color){
 	filter: drop-shadow(0 0 3px $color);
@@ -33,62 +35,78 @@ $green: #9CBB3E;
 	box-shadow: inset 0.1em 0.1em 1em black;
 }
 
+@mixin mq($width){
+	@media(max-width: $width){
+		@content;
+	}
+}
+
 body{
 	background-color: $bg-color;
 	margin: 0;
 	font-family: $body-font;
-	display: flex;
 	overflow-y: hidden;
-
-
-}
-.buttons{
-	display: flex;
-	flex-direction: column;
-	align-self: center;
-	text-align: center;
-	margin-bottom: 3em;
-
-	.up,
-	.down{
-		z-index: 2;
-		padding: 1em;
-		filter: drop-shadow(0 0 0.25em white);
 	}
 
-}
-.info-button{
+
+
+
+// .buttons{
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-self: center;
+// 	text-align: center;
+// 	z-index: 2;
+// 	margin-left: 5em;
+//
+// 	// position: fixed;
+//
+//
+// 	.up,
+// 	.down{
+// 		z-index: 2;
+// 		padding: 1em;
+// 		filter: drop-shadow(0 0 0.25em white);
+// 	}
+//
+// }
+.infoButton{
 	position: absolute;
 	top: 0;
 	left: 0;
 	padding: 1em;
 
+
 	img{
-		width:80px;
+		width: 4em;
 	}
+
+
 }
 
 main{
-	// position: absolute;
-	//
-	// top: 0;
-	// right: 0;
-
-	width: 80vw;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
+	// align-self: center;
 	text-align: center;
 	// background-color: green;
 
-	.moreInfo{
-		color: $alt-color;
-		position: absolute;
-		bottom: 2em;
-		right: 2em;
-		padding: 1em;
-		@include border(white);
 
-	}
+}
 
+.modal{
+	width: 100vw;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: auto;
+	z-index: 3;
+	background-color: grey;
+	visibility: hidden;
+}
+.seen{
+	visibility: visible;
 }
 
 
@@ -128,17 +146,13 @@ main{
 	}
 
 
-	.about{
-		margin: 0 2em;
-	}
-
 
 	.bio{
 		align-self: flex-start;
 		font-family: $body-font;
-		font-size: 1.5em;
+		font-size: 1em;
 		line-height: 1.25;
-		margin: 2em 0;
+		margin: 3em 2em;
 	}
 
 	.close{
@@ -149,26 +163,81 @@ main{
 		font-size: 1.5em;
 	}
 
+	.close:hover{
+		color: $alt-color;
+	}
+
+	.thisSite{
+	margin: 2em;
+	}
+
 
 }
 
 
 
 
-.siteName{
-width:20vw;
-z-index: 2;
-padding: 1em;
-text-align: center;
-position: fixed;
-bottom: 3em;
 
-a{
-	text-decoration: none;
-	color: $font-color;
+
+.footer{
+	position: absolute;
+	width: 100vw;
+	bottom: 1em;
+
+	@include mq($phone-width){
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+
+	}
+
+
+	.moreInfo{
+		color: $alt-color;
+		position: absolute;
+		bottom: 1em;
+		right: 2em;
+
+		padding: 1em;
+		@include border(white);
+		@include mq($phone-width){
+		position: relative;
+		right: 0;
+		margin-top: 2em;
+
+
+		}
+	}
+
+	.siteName{
+	width:20vw;
+	padding: 1em;
+	text-align: center;
+	position: absolute;
+	bottom: 1em;
+	left: 40%;
+
+	@include mq($phone-width){
+		// left: 30%;
+		position: relative;
+		margin-top: 1em;
+		width: 40vw;
+		left: 0;
+
+	}
+
+
+	a{
+		text-decoration: none;
+		color: $font-color;
+	}
+
+	}
+
+
 }
 
-}
 
 
 .titles{
@@ -184,21 +253,56 @@ a{
 .bigBox,
 .carousel{
 		z-index: 1;
+		align-self: center;
 		@include flexalign;
 }
 
 
 .bigBox{
 	// background-color: red;
-	height: 100vh;
-	// margin: 1em 0;
+
+	height:100vh;
+	display: grid;
 }
+
+.arrow-keys{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	grid-area: 1 / 1 / 2 / 2;
+	justify-self: center;
+
+	.bottom{
+		// background-color: blue;
+		height: 50vh;
+		width: 90vw;
+			cursor: url(./assets/downcur.png),auto !important;
+	}
+
+	.top{
+		// background-color: green;
+		width: 90vw;
+		height: 50vh;
+		cursor: url(./assets/upcur.png),auto !important;
+	}
+
+}
+
+
+
 .container{
 	position: relative;
+	align-self: center;
 	perspective: 1000px;
 	width: 50vw;
 	height: 50vh;
-	// margin: 2em auto;
+	grid-area: 1 / 1 / 2 / 2;
+	justify-self: center;
+	// align-self: stretch;
+	// background-color: purple;
+	margin-bottom: 6em;
 
 }
 
@@ -206,16 +310,17 @@ a{
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	top: 3em;
+	top: 0;
 	left: 0;
 	transform-style: preserve-3d;
 	transition: transform 1s;
+	transform: translateZ(-488px);
 
 }
 
 .cell{
 	position: absolute;
-	margin: 2em auto;
+	margin: 1em auto;
 	width: 40vw;
 	height: 40vh;
 
@@ -227,38 +332,89 @@ a{
 	@include softborder($green);
 	@include flexalign;
 
-	img{
+	a {
+		object-fit: cover;
+	}
+		img{
 		filter: opacity(80%);
 		object-fit: cover;
 		width: 100%;
 		height: 100%;
-	}
-
 }
 
+@include mq($phone-width){
+	width:70vw;
+	height: 20vh;
+}
+
+}
+$distZ: 55vh;
+$distZphone: 27vh;
+// $rotateX: 360 /numberOfCells
+
 .cell:nth-child(1){
-	transform: rotateX(0deg)translateZ(34.5vh);
+	transform: rotateX(0deg)translateZ($distZ);
+
+	@include mq($phone-width){
+		transform: rotateX(0)translateZ($distZphone);
+	}
+
 
 }
 
 .cell:nth-child(2){
-	transform: rotateX(60deg)translateZ(34.5vh);
+	transform: rotateX(40deg)translateZ($distZ);
+	@include mq($phone-width){
+		transform: rotateX(40deg)translateZ($distZphone);
+	}
 
 }
 
 .cell:nth-child(3){
-	transform: rotateX(120deg)translateZ(34.5vh);
+	transform: rotateX(80deg)translateZ($distZ);
+	@include mq($phone-width){
+		transform: rotateX(80deg)translateZ($distZphone);
+	}
 }
 
 .cell:nth-child(4){
-	transform: rotateX(180deg)translateZ(34.5vh);
+	transform: rotateX(120deg)translateZ($distZ);
+	@include mq($phone-width){
+		transform: rotateX(120deg)translateZ($distZphone);
+	}
 
 }
 
 .cell:nth-child(5){
-	transform: rotateX(240deg)translateZ(34.5vh);
+	transform: rotateX(160deg)translateZ($distZ);
+	@include mq($phone-width){
+		transform: rotateX(160deg)translateZ($distZphone);
+	}
 }
 
 .cell:nth-child(6){
-	transform: rotateX(300deg)translateZ(34.5vh);
+	transform: rotateX(200deg)translateZ($distZ);
+	@include mq($phone-width){
+		transform: rotateX(200deg)translateZ($distZphone);
+	}
+}
+
+.cell:nth-child(7){
+	transform: rotateX(240deg)translateZ($distZ);
+	@include mq($phone-width){
+		transform: rotateX(240deg)translateZ($distZphone);
+	}
+}
+
+.cell:nth-child(8){
+	transform: rotateX(280deg)translateZ($distZ);
+	@include mq($phone-width){
+		transform: rotateX(280deg)translateZ($distZphone);
+	}
+}
+.cell:nth-child(9){
+	transform: rotateX(320deg)translateZ($distZ);
+	@include mq($phone-width){
+		transform: rotateX(320deg)translateZ($distZphone);
+	}
 }

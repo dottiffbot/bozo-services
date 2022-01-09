@@ -2,12 +2,12 @@ let canvas;
 let r = 255;
 let g = 255;
 let b = 255;
-let diameter = 20;
+let diameter = 32;
 
 function setup (){
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0, 0);
-  canvas.style("z-index", "-1");
+  canvas.style("z-index", "-2");
   background(0);
 }
 
