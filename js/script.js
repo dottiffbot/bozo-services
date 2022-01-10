@@ -57,7 +57,7 @@ window.addEventListener('load', function(){
   siteName.style.visibility = "hidden"
   moreInfo.style.visibility = "hidden"
   randomColor()
-  howTo()
+  // howTo()
 })
 
 // play audio
