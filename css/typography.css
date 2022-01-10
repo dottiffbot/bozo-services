@@ -7,3 +7,8 @@
 	font-family: "cantique";
 	src: url(./assets/Cantique-Normal.woff2), url(./assets/Cantique-Normal.woff);
 }
+
+@font-face {
+	font-family: "keroine";
+	src: url(./assets/KeroineTRIAL-DouxExtreme.otf);
+}

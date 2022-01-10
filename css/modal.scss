@@ -1,0 +1,220 @@
+@use "typography";
+
+$serif-font: "keroine";
+$text-color: white;
+$phone-width: 500px;
+
+@mixin border($color){
+	border-radius: 50px;
+	border: 1px solid $color;
+}
+@mixin softborder{
+  border-radius: 10px;
+}
+@mixin mq($width){
+	@media(max-width: $width){
+		@content;
+	}
+}
+
+.modal{
+	width: 100vw;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: auto;
+	z-index: 3;
+	background-color: black;
+	visibility: hidden;
+  a{
+    text-decoration: underline;
+    color: white;
+  }
+}
+.seen{
+	visibility: visible;
+}
+#venice,
+#ftr,
+#telepresence{
+		cursor: url(./assets/more.png),auto !important;
+}
+
+@mixin flexcolumn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.m-container{
+  line-height: 1.5;
+  @include flexcolumn;
+
+  .ex{
+    position: fixed;
+    top: 1em;
+    right: 2em;
+    font-size: 2em;
+    color: $text-color;
+
+    .ex:hover{
+      color: black;
+
+    }
+  }
+  h1{
+    font-size: 2em;
+    font-family: $serif-font;
+    margin: 2em;
+    // text-transform: uppercase;
+    color: $text-color;
+  }
+  h2{
+    color: $text-color;
+    font-family: $serif-font;
+    font-size: 1.5em;
+    // text-transform: uppercase;
+  }
+  em{
+    margin: 1em;
+    color: grey;
+    font-style: italic;
+  }
+  p{
+      color: $text-color;
+
+  }
+
+.intro{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+
+    @include mq($phone-width){
+      flex-direction: column;
+    }
+
+    div{
+      margin: 2em;
+    }
+
+    .text{
+      color: $text-color;
+      width: 30vw;
+      @include border(white);
+      @include mq($phone-width){
+        width:80vw;
+      }
+
+      // height: 100vh;
+      p{
+        padding: 1em;
+      }
+    }
+
+    .img{
+      width:70vw;
+      // height: 50vh;
+      // align-self: center;
+      overflow: hidden;
+      @include softborder;
+
+      img{
+        width:80vw;
+
+        // height: 100%;
+        // object-fit:cover;
+      }
+
+      #contain{
+        transform: scale(0.75);
+      }
+    }
+
+
+
+  }
+
+  .sidebythree{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    img{
+      width: 30vw;
+    }
+  }
+
+  .sideby{
+    display: flex;
+    align-items: center;
+    img{
+      width: 50vw;
+    }
+    p{
+      width: 50vw;
+      text-align: justify;
+      padding: 5em;
+      @include mq($phone-width){
+        object-fit: scale-down;
+        padding: 0 2em;
+        font-size: 0.75rem;
+
+      }
+    }
+    .room{
+      margin: 0 4em;
+    }
+  }
+
+
+  .img-cont{
+      @include flexcolumn;
+
+    .image-full{
+      width: 100vw;
+      height: 100vh;
+
+      img{
+        width: 100%;
+
+      }
+      h2{
+        color: black;
+        background-color: white;
+        text-transform: uppercase;
+      }
+      p{
+        padding: 2em;
+        font-size: 2em;
+        font-family: $serif-font;
+        text-align: center;
+        color: black;
+        background-color: white;
+        @include mq($phone-width){
+
+          font-size: 1rem;
+
+        }
+      }
+    }
+
+  }
+
+  }
+
+  .videoPlayer{
+    position: relative;
+    text-align: center;
+    video{
+     width: 50vw !important;
+     height: auto;
+   }
+  }
+  .videoPlayer::after{
+  display: block;
+  content: "";
+}

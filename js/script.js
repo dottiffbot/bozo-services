@@ -36,22 +36,28 @@ let colors = [
 
 
 const siteNames = [
+  {copy: "control", url:"https://cntrl-study.glitch.me", projectType: "package design"},
+  {copy: "from the rupture", url:"https://ftr.eyebeam.org/", projectType: "3D animation, design system, ux"},
+  {copy: "telepresence", url: "https://mfadt.space/", projectType: "3D animation"},
   {copy:"invisible art handler", url:"https://invisible.art-handler.com/", projectType: "website, AR"},
   {copy: "icky gooey heart chamber", url:"https://ickygoohe.art/", projectType: "website, 3D" },
   {copy:"#black people dancing on the internet", url:"https://www.residency-blackpeopledancingontheinternet.com/", projectType: "website"},
   {copy:"ingridraphael.com", url:"https://www.ingrid-raphael.com/", projectType: "website"},
   {copy:"black beyond: origins", url:"http://origins.blackbeyond.xyz/", projectType: "website, 3D animation"},
-  {copy: "how to begin again", url:"", projectType: "3D Illustration"},
-  {copy: "from the rupture", url:"https://ftr.eyebeam.org/", projectType: "3D animation, design system"},
-  {copy: "control", url:"https://cntrl-study.glitch.me", projectType: "package design"},
-  {copy: "riso posters", url: "", projectType: "print, 3D design"}
+  {copy: "how to begin again", url:"https://www.labiennale.org/en/architecture/2021/emerging-communities/cohabitation-strategies", projectType: "3D illustration"}
+
 ]
+
+function howTo(){
+  alert ("hello, welcome to this website! I am glad you are here. a couple of things that might be helpful: use can use the arrow keys or click around to navigate. Additional project information can be found by clicking on the images. All projects with websites are linked in the title card below. Have a nice day :)")
+}
 
 
 window.addEventListener('load', function(){
   siteName.style.visibility = "hidden"
   moreInfo.style.visibility = "hidden"
   randomColor()
+  howTo()
 })
 
 // play audio

@@ -72,6 +72,188 @@ input, textarea, select {
   font-family: "cantique";
   src: url(./assets/Cantique-Normal.woff2), url(./assets/Cantique-Normal.woff);
 }
+@font-face {
+  font-family: "keroine";
+  src: url(./assets/KeroineTRIAL-DouxExtreme.otf);
+}
+.modal {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  z-index: 3;
+  background-color: black;
+  visibility: hidden;
+}
+.modal a {
+  text-decoration: underline;
+  color: white;
+}
+
+.seen {
+  visibility: visible;
+}
+
+#venice,
+#ftr,
+#telepresence {
+  cursor: url(./assets/more.png), auto !important;
+}
+
+.m-container {
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.m-container .ex {
+  position: fixed;
+  top: 1em;
+  right: 2em;
+  font-size: 2em;
+  color: white;
+}
+.m-container .ex .ex:hover {
+  color: black;
+}
+.m-container h1 {
+  font-size: 2em;
+  font-family: "keroine";
+  margin: 2em;
+  color: white;
+}
+.m-container h2 {
+  color: white;
+  font-family: "keroine";
+  font-size: 1.5em;
+}
+.m-container em {
+  margin: 1em;
+  color: grey;
+  font-style: italic;
+}
+.m-container p {
+  color: white;
+}
+.m-container .intro {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+@media (max-width: 500px) {
+  .m-container .intro {
+    flex-direction: column;
+  }
+}
+.m-container .intro div {
+  margin: 2em;
+}
+.m-container .intro .text {
+  color: white;
+  width: 30vw;
+  border-radius: 50px;
+  border: 1px solid white;
+}
+@media (max-width: 500px) {
+  .m-container .intro .text {
+    width: 80vw;
+  }
+}
+.m-container .intro .text p {
+  padding: 1em;
+}
+.m-container .intro .img {
+  width: 70vw;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.m-container .intro .img img {
+  width: 80vw;
+}
+.m-container .intro .img #contain {
+  transform: scale(0.75);
+}
+.m-container .sidebythree {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.m-container .sidebythree img {
+  width: 30vw;
+}
+.m-container .sideby {
+  display: flex;
+  align-items: center;
+}
+.m-container .sideby img {
+  width: 50vw;
+}
+.m-container .sideby p {
+  width: 50vw;
+  text-align: justify;
+  padding: 5em;
+}
+@media (max-width: 500px) {
+  .m-container .sideby p {
+    object-fit: scale-down;
+    padding: 0 2em;
+    font-size: 0.75rem;
+  }
+}
+.m-container .sideby .room {
+  margin: 0 4em;
+}
+.m-container .img-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.m-container .img-cont .image-full {
+  width: 100vw;
+  height: 100vh;
+}
+.m-container .img-cont .image-full img {
+  width: 100%;
+}
+.m-container .img-cont .image-full h2 {
+  color: black;
+  background-color: white;
+  text-transform: uppercase;
+}
+.m-container .img-cont .image-full p {
+  padding: 2em;
+  font-size: 2em;
+  font-family: "keroine";
+  text-align: center;
+  color: black;
+  background-color: white;
+}
+@media (max-width: 500px) {
+  .m-container .img-cont .image-full p {
+    font-size: 1rem;
+  }
+}
+
+.videoPlayer {
+  position: relative;
+  text-align: center;
+}
+.videoPlayer video {
+  width: 50vw !important;
+  height: auto;
+}
+
+.videoPlayer::after {
+  display: block;
+  content: "";
+}
+
 body {
   background-color: black;
   margin: 0;
@@ -93,22 +275,6 @@ main {
   width: 100vw;
   height: 100vh;
   text-align: center;
-}
-
-.modal {
-  width: 100vw;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: auto;
-  z-index: 3;
-  background-color: grey;
-  visibility: hidden;
-}
-
-.seen {
-  visibility: visible;
 }
 
 .side-bar {
@@ -162,6 +328,14 @@ main {
 }
 .side-bar .thisSite {
   margin: 2em;
+  line-height: 1.5;
+  font-size: 0.85rem;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  filter: drop-shadow(0 0 3px white);
+  padding: 1em;
 }
 
 .footer {
@@ -218,6 +392,7 @@ main {
   border: 1px solid black;
   border-radius: 60px;
   box-shadow: inset 0.1em 0.1em 1em black;
+  cursor: url(./assets/link.png), auto !important;
 }
 
 .bigBox,
@@ -247,12 +422,12 @@ main {
 .arrow-keys .bottom {
   height: 50vh;
   width: 90vw;
-  cursor: url(./assets/downcur.png), auto !important;
+  cursor: url(./assets/cursordown.png), auto !important;
 }
 .arrow-keys .top {
   width: 90vw;
   height: 50vh;
-  cursor: url(./assets/upcur.png), auto !important;
+  cursor: url(./assets/cursorup.png), auto !important;
 }
 
 .container {
@@ -264,6 +439,11 @@ main {
   grid-area: 1/1/2/2;
   justify-self: center;
   margin-bottom: 6em;
+}
+@media (max-width: 500px) {
+  .container {
+    margin-bottom: 15em;
+  }
 }
 
 .carousel {

@@ -3,6 +3,8 @@ const coshra = document.querySelector(".coshra")
 const eyebeam = document.querySelector(".eyebeam")
 const venice = document.querySelector("#venice")
 const ftr = document.querySelector("#ftr")
+const telepresence = document.querySelector("#telepresence")
+const bubs = document.querySelector(".bubs")
 const closeModals = document.querySelectorAll(".ex")
 
 
@@ -14,6 +16,11 @@ venice.addEventListener("click", function (){
 
 ftr.addEventListener("click", function (){
   eyebeam.classList.toggle("seen")
+
+})
+
+telepresence.addEventListener("click", function(){
+  bubs.classList.toggle("seen")
 
 })
 
