@@ -49,7 +49,7 @@ const siteNames = [
 ]
 
 function howTo(){
-  alert ("hello, welcome to this website! I am glad you are here. a couple of things that might be helpful: use can use the arrow keys or click around to navigate. Additional project information can be found by clicking on the images. All projects with websites are linked in the title card below. Have a nice day :)")
+  alert ("hello, welcome to this website! I am glad you are here. a couple of things that might be helpful: you can use the arrow keys or click around to navigate. Additional project information can be found by clicking on the images. All projects with websites are linked in the title card below. Have a nice day :)")
 }
 
 
