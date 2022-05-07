@@ -65,12 +65,12 @@ input, textarea, select {
 }
 
 @font-face {
-  font-family: "aveX";
-  src: url(./assets/AvenueX.otf);
+  font-family: "gerstner";
+  src: url(./assets/Gerstner_Regular.otf);
 }
 @font-face {
-  font-family: "cantique";
-  src: url(./assets/Cantique-Normal.woff2), url(./assets/Cantique-Normal.woff);
+  font-family: "tartuffo";
+  src: url(./assets/Tartuffo-Regular.ttf);
 }
 @font-face {
   font-family: "keroine";
@@ -123,12 +123,18 @@ input, textarea, select {
   font-size: 2em;
   font-family: "keroine";
   margin: 2em;
+  text-transform: uppercase;
   color: white;
 }
 .m-container h2 {
   color: white;
   font-family: "keroine";
   font-size: 1.5em;
+  text-transform: uppercase;
+}
+.m-container h3 {
+  padding-top: 1.5em;
+  font-size: 2em;
 }
 .m-container em {
   margin: 1em;
@@ -257,7 +263,7 @@ input, textarea, select {
 body {
   background-color: black;
   margin: 0;
-  font-family: "aveX", sans-serif;
+  font-family: "gerstner", sans-serif;
   overflow-y: hidden;
 }
 
@@ -311,8 +317,8 @@ main {
 }
 .side-bar .bio {
   align-self: flex-start;
-  font-family: "aveX", sans-serif;
-  font-size: 1em;
+  font-family: "gerstner", sans-serif;
+  font-size: 1.25em;
   line-height: 1.25;
   margin: 3em 2em;
 }

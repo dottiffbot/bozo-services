@@ -1,11 +1,11 @@
-@font-face{
-	font-family: "aveX";
-	src: url(./assets/AvenueX.otf);
-}
 
-@font-face{
-	font-family: "cantique";
-	src: url(./assets/Cantique-Normal.woff2), url(./assets/Cantique-Normal.woff);
+@font-face {
+	font-family: "gerstner";
+	src: url(./assets/Gerstner_Regular.otf);
+}
+@font-face {
+	font-family: "tartuffo";
+	src: url(./assets/Tartuffo-Regular.ttf);
 }
 
 @font-face {

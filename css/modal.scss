@@ -1,6 +1,7 @@
 @use "typography";
 
 $serif-font: "keroine";
+$sans-font: "gerstner";
 $text-color: white;
 $phone-width: 500px;
 
@@ -68,15 +69,19 @@ $phone-width: 500px;
     font-size: 2em;
     font-family: $serif-font;
     margin: 2em;
-    // text-transform: uppercase;
+    text-transform: uppercase;
     color: $text-color;
   }
   h2{
     color: $text-color;
     font-family: $serif-font;
     font-size: 1.5em;
-    // text-transform: uppercase;
+    text-transform: uppercase;
   }
+	h3{
+		padding-top: 1.5em;
+		font-size: 2em;
+	}
   em{
     margin: 1em;
     color: grey;

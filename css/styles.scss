@@ -3,8 +3,7 @@
 @use "modal";
 
 $bg-color: black;
-$body-font: 'aveX', sans-serif;
-$serif-font: 'cantique';
+$body-font: 'gerstner', sans-serif;
 $font-color: black;
 $alt-color: white;
 $green: #9CBB3E;
@@ -137,7 +136,7 @@ main{
 	.bio{
 		align-self: flex-start;
 		font-family: $body-font;
-		font-size: 1em;
+		font-size: 1.25em;
 		line-height: 1.25;
 		margin: 3em 2em;
 	}
@@ -218,7 +217,6 @@ main{
 		margin-top: 1em;
 		width: 40vw;
 		left: 0;
-
 	}
 
 
