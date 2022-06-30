@@ -1,14 +1,30 @@
 
 @font-face {
 	font-family: "gerstner";
-	src: url(./assets/Gerstner_Regular.otf);
-}
-@font-face {
-	font-family: "tartuffo";
-	src: url(./assets/Tartuffo-Regular.ttf);
+	src: url(./assets/typefaces/Gerstner_Regular.otf);
 }
 
 @font-face {
+	font-family: "alteHaasBold";
+	src: url(./assets/typefaces/AlteHaasGroteskBold.ttf);
+}
+@font-face {
+	font-family: "alteHaas";
+	src: url(./assets/typefaces/AlteHaasGroteskRegular.ttf);
+}
+
+@font-face {
+	font-family: "tartuffo";
+	src: url(./assets/typefaces/Tartuffo-Regular.ttf);
+}
+
+@font-face {
+	font-family: "arachne";
+	src: url(./assets/typefaces/Arachne.ttf);
+}
+
+
+@font-face {
 	font-family: "keroine";
-	src: url(./assets/KeroineTRIAL-DouxExtreme.otf);
+	src: url(./assets/typefaces/KeroineTRIAL-DouxExtreme.otf);
 }

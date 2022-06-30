@@ -66,15 +66,27 @@ input, textarea, select {
 
 @font-face {
   font-family: "gerstner";
-  src: url(./assets/Gerstner_Regular.otf);
+  src: url(./assets/typefaces/Gerstner_Regular.otf);
+}
+@font-face {
+  font-family: "alteHaasBold";
+  src: url(./assets/typefaces/AlteHaasGroteskBold.ttf);
+}
+@font-face {
+  font-family: "alteHaas";
+  src: url(./assets/typefaces/AlteHaasGroteskRegular.ttf);
 }
 @font-face {
   font-family: "tartuffo";
-  src: url(./assets/Tartuffo-Regular.ttf);
+  src: url(./assets/typefaces/Tartuffo-Regular.ttf);
+}
+@font-face {
+  font-family: "arachne";
+  src: url(./assets/typefaces/Arachne.ttf);
 }
 @font-face {
   font-family: "keroine";
-  src: url(./assets/KeroineTRIAL-DouxExtreme.otf);
+  src: url(./assets/typefaces/KeroineTRIAL-DouxExtreme.otf);
 }
 .modal {
   width: 100vw;
@@ -98,7 +110,8 @@ input, textarea, select {
 
 #venice,
 #ftr,
-#telepresence {
+#telepresence,
+#spawn {
   cursor: url(./assets/more.png), auto !important;
 }
 
@@ -108,22 +121,36 @@ input, textarea, select {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  margin: 0.2em 2em;
+  overflow-x: hidden;
 }
 .m-container .ex {
   position: fixed;
   top: 1em;
-  right: 2em;
+  right: 0.3em;
   font-size: 2em;
   color: white;
+  mix-blend-mode: difference;
+  transition: transform 1s;
+  border: 1px solid white;
+  border-radius: 100%;
+  padding: 0 0.5em;
+  text-align: center;
 }
-.m-container .ex .ex:hover {
-  color: black;
+.m-container .ex:hover {
+  transform: rotate(90deg);
 }
 .m-container h1 {
-  font-size: 2em;
+  font-size: 5vw;
   font-family: "keroine";
-  margin: 2em;
+  margin-bottom: 1em;
+  align-self: center;
   text-transform: uppercase;
+  position: absolute;
+  font-weight: normal;
+  mix-blend-mode: difference;
+  top: 0.25em;
+  left: 0.5em;
   color: white;
 }
 .m-container h2 {
@@ -134,7 +161,8 @@ input, textarea, select {
 }
 .m-container h3 {
   padding-top: 1.5em;
-  font-size: 2em;
+  font-size: 2vw;
+  color: yellowgreen;
 }
 .m-container em {
   margin: 1em;
@@ -143,12 +171,18 @@ input, textarea, select {
 }
 .m-container p {
   color: white;
+  font-size: 1vw;
+}
+.m-container .description {
+  font-size: 1.25vw;
 }
 .m-container .intro {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100vh;
+  margin: 0 4em;
 }
 @media (max-width: 500px) {
   .m-container .intro {
@@ -160,25 +194,53 @@ input, textarea, select {
 }
 .m-container .intro .text {
   color: white;
-  width: 30vw;
-  border-radius: 50px;
-  border: 1px solid white;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow-y: scroll;
 }
 @media (max-width: 500px) {
   .m-container .intro .text {
     width: 80vw;
   }
 }
+.m-container .intro .text .overview {
+  font-size: 1em;
+  text-align: left;
+  margin-left: 1em;
+  font-family: "keroine";
+}
+.m-container .intro .text .scope {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content: space-around;
+}
+.m-container .intro .text .scope p {
+  text-align: left;
+}
+.m-container .intro .text .scope .role {
+  margin: 1em;
+}
+.m-container .intro .text .scope .collaborators {
+  margin: 1em;
+}
 .m-container .intro .text p {
   padding: 1em;
+  text-align: justify;
+  text-justify: inter-word;
 }
 .m-container .intro .img {
-  width: 70vw;
+  width: 60vw;
   overflow: hidden;
   border-radius: 10px;
 }
 .m-container .intro .img img {
   width: 80vw;
+  height: auto;
+  display: inline-block;
 }
 .m-container .intro .img #contain {
   transform: scale(0.75);
@@ -195,12 +257,17 @@ input, textarea, select {
 .m-container .sideby {
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
 .m-container .sideby img {
   width: 50vw;
+  padding: 2em;
+  flex-basis: 50%;
+  flex-grow: 0;
 }
 .m-container .sideby p {
   width: 50vw;
+  flex-grow: 0;
   text-align: justify;
   padding: 5em;
 }
@@ -222,7 +289,7 @@ input, textarea, select {
 }
 .m-container .img-cont .image-full {
   width: 100vw;
-  height: 100vh;
+  height: auto;
 }
 .m-container .img-cont .image-full img {
   width: 100%;
@@ -246,25 +313,25 @@ input, textarea, select {
   }
 }
 
-.videoPlayer {
-  position: relative;
-  text-align: center;
-}
-.videoPlayer video {
-  width: 50vw !important;
-  height: auto;
-}
-
-.videoPlayer::after {
-  display: block;
-  content: "";
-}
-
 body {
   background-color: black;
   margin: 0;
-  font-family: "gerstner", sans-serif;
+  font-family: "alteHaas", sans-serif;
   overflow-y: hidden;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+  padding: 1em;
+  top: 0;
+  right: 0;
+}
+header p {
+  padding: 0.5em;
 }
 
 .infoButton {
@@ -317,7 +384,7 @@ main {
 }
 .side-bar .bio {
   align-self: flex-start;
-  font-family: "gerstner", sans-serif;
+  font-family: "alteHaas", sans-serif;
   font-size: 1.25em;
   line-height: 1.25;
   margin: 3em 2em;

@@ -42,9 +42,10 @@ const siteNames = [
   {copy:"invisible art handler", url:"https://invisible.art-handler.com/", projectType: "website, AR"},
   {copy: "icky gooey heart chamber", url:"https://ickygoohe.art/", projectType: "website, 3D" },
   {copy:"#black people dancing on the internet", url:"https://www.residency-blackpeopledancingontheinternet.com/", projectType: "website"},
-  {copy:"ingridraphael.com", url:"https://www.ingrid-raphael.com/", projectType: "website"},
+  // {copy:"ingridraphael.com", url:"https://www.ingrid-raphael.com/", projectType: "website"},
   {copy:"black beyond: origins", url:"http://origins.blackbeyond.xyz/", projectType: "website, 3D animation"},
-  {copy: "how to begin again", url:"https://www.labiennale.org/en/architecture/2021/emerging-communities/cohabitation-strategies", projectType: "3D illustration"}
+  {copy: "how to begin again", url:"https://www.labiennale.org/en/architecture/2021/emerging-communities/cohabitation-strategies", projectType: "3D illustration"},
+  {copy: "spawn", url:"https://parsons.edu/dt-2022/spawn/", projectType:"installation"}
 
 ]
 

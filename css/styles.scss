@@ -3,7 +3,7 @@
 @use "modal";
 
 $bg-color: black;
-$body-font: 'gerstner', sans-serif;
+$body-font: 'alteHaas', sans-serif;
 $font-color: black;
 $alt-color: white;
 $green: #9CBB3E;
@@ -69,6 +69,23 @@ body{
 // 	}
 //
 // }
+
+
+header{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	color: white;
+	padding: 1em;
+	// position: absolute;
+	top: 0;
+	right: 0;
+
+	p{
+		padding: 0.5em;
+	}
+}
 .infoButton{
 	position: absolute;
 	top: 0;
@@ -347,6 +364,7 @@ main{
 }
 $distZ: 55vh;
 $distZphone: 27vh;
+
 // $rotateX: 360 /numberOfCells
 
 .cell:nth-child(1){
