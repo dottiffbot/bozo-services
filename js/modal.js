@@ -4,6 +4,8 @@ const eyebeam = document.querySelector(".eyebeam")
 const venice = document.querySelector("#venice")
 const spawn = document.querySelector("#spawn")
 const trust = document.querySelector(".trust")
+const bb = document.querySelector("#bb");
+const beyond = document.querySelector(".beyond")
 const ftr = document.querySelector("#ftr")
 const telepresence = document.querySelector("#telepresence")
 const bubs = document.querySelector(".bubs")
@@ -21,6 +23,10 @@ ftr.addEventListener("click", function (){
 
 })
 
+bb.addEventListener("click", function(){
+  beyond.classList.toggle("seen")
+})
+
 telepresence.addEventListener("click", function(){
   bubs.classList.toggle("seen")
 
@@ -29,6 +35,12 @@ spawn.addEventListener("click", function(){
   trust.classList.toggle("seen")
 
 })
+
+// modals.forEach(modal =>{
+//   modal.addEventListener("click", function(){
+//     modal.classList.toggle("seen")
+//   })
+// })
 
 
 closeModals.forEach(close => {

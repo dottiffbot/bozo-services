@@ -27,7 +27,10 @@ $phone-width: 500px;
 	overflow: auto;
 	z-index: 3;
 	background-color: black;
-	visibility: hidden;
+  visibility: hidden;
+	opacity: 0;
+  transition: opacity 0.5s;
+ 
   a{
     text-decoration: underline;
     color: white;
@@ -35,6 +38,8 @@ $phone-width: 500px;
 }
 .seen{
 	visibility: visible;
+  opacity: 1;
+
 }
 #venice,
 #ftr,

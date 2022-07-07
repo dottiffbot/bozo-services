@@ -98,6 +98,8 @@ input, textarea, select {
   z-index: 3;
   background-color: black;
   visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 .modal a {
   text-decoration: underline;
@@ -106,6 +108,7 @@ input, textarea, select {
 
 .seen {
   visibility: visible;
+  opacity: 1;
 }
 
 #venice,
