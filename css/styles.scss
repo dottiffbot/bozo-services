@@ -303,7 +303,6 @@ main{
 }
 
 .mobile-arrows{
-	z-index: 2;
 	display: flex;
 
 }
@@ -322,7 +321,7 @@ main{
 	// background-color: purple;
 	margin-bottom: 6em;
 	@include mq($phone-width){
-		margin-bottom: 15em;
+		// margin-bottom: 15em;
 	}
 
 }
@@ -364,13 +363,13 @@ main{
 }
 
 @include mq($phone-width){
-	width:70vw;
-	height: 20vh;
+	width:90vw;
+	height: 30vh;
 }
 
 }
 $distZ: 55vh;
-$distZphone: 27vh;
+$distZphone: 41vh;
 
 // $rotateX: 360 /numberOfCells
 

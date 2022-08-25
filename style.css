@@ -555,7 +555,6 @@ main {
 }
 
 .mobile-arrows {
-  z-index: 2;
   display: flex;
 }
 
@@ -569,12 +568,6 @@ main {
   justify-self: center;
   margin-bottom: 6em;
 }
-@media (max-width: 500px) {
-  .container {
-    margin-bottom: 15em;
-  }
-}
-
 .carousel {
   width: 100%;
   height: 100%;
@@ -612,8 +605,8 @@ main {
 }
 @media (max-width: 500px) {
   .cell {
-    width: 70vw;
-    height: 20vh;
+    width: 90vw;
+    height: 30vh;
   }
 }
 
@@ -622,7 +615,7 @@ main {
 }
 @media (max-width: 500px) {
   .cell:nth-child(1) {
-    transform: rotateX(0) translateZ(27vh);
+    transform: rotateX(0) translateZ(41vh);
   }
 }
 
@@ -631,7 +624,7 @@ main {
 }
 @media (max-width: 500px) {
   .cell:nth-child(2) {
-    transform: rotateX(40deg) translateZ(27vh);
+    transform: rotateX(40deg) translateZ(41vh);
   }
 }
 
@@ -640,7 +633,7 @@ main {
 }
 @media (max-width: 500px) {
   .cell:nth-child(3) {
-    transform: rotateX(80deg) translateZ(27vh);
+    transform: rotateX(80deg) translateZ(41vh);
   }
 }
 
@@ -649,7 +642,7 @@ main {
 }
 @media (max-width: 500px) {
   .cell:nth-child(4) {
-    transform: rotateX(120deg) translateZ(27vh);
+    transform: rotateX(120deg) translateZ(41vh);
   }
 }
 
@@ -658,7 +651,7 @@ main {
 }
 @media (max-width: 500px) {
   .cell:nth-child(5) {
-    transform: rotateX(160deg) translateZ(27vh);
+    transform: rotateX(160deg) translateZ(41vh);
   }
 }
 
@@ -667,7 +660,7 @@ main {
 }
 @media (max-width: 500px) {
   .cell:nth-child(6) {
-    transform: rotateX(200deg) translateZ(27vh);
+    transform: rotateX(200deg) translateZ(41vh);
   }
 }
 
@@ -676,7 +669,7 @@ main {
 }
 @media (max-width: 500px) {
   .cell:nth-child(7) {
-    transform: rotateX(240deg) translateZ(27vh);
+    transform: rotateX(240deg) translateZ(41vh);
   }
 }
 
@@ -685,7 +678,7 @@ main {
 }
 @media (max-width: 500px) {
   .cell:nth-child(8) {
-    transform: rotateX(280deg) translateZ(27vh);
+    transform: rotateX(280deg) translateZ(41vh);
   }
 }
 
@@ -694,7 +687,7 @@ main {
 }
 @media (max-width: 500px) {
   .cell:nth-child(9) {
-    transform: rotateX(320deg) translateZ(27vh);
+    transform: rotateX(320deg) translateZ(41vh);
   }
 }
 
