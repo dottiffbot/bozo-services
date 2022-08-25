@@ -143,6 +143,8 @@ input, textarea, select {
 @media (max-width: 800px) {
   .m-container .ex {
     border: none;
+    right: 0.2em;
+    font-size: 1em;
   }
 }
 .m-container .ex:hover {
@@ -543,6 +545,11 @@ main {
   width: 90vw;
   height: 50vh;
   cursor: url(./assets/cursorup.png), auto !important;
+}
+
+.mobile-arrows {
+  z-index: 2;
+  display: flex;
 }
 
 .container {

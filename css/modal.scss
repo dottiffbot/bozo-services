@@ -75,6 +75,8 @@ $phone-width: 800px;
     text-align: center;
     @include mq($phone-width){
      border: none;
+     right: 0.2em;
+     font-size: 1em;
     }
     
 

@@ -7,6 +7,7 @@ const left = document.querySelector(".side-bar")
 const infoButton = document.querySelector(".infoButton")
 const close = document.querySelector(".close")
 const moreInfo = document.querySelector(".moreInfo")
+const footer = document.querySelector(".footer")
 
 
 
@@ -16,6 +17,8 @@ let cellWidth;
 
 
 let picNum = 0;
+
+let mobileArrows, upArrow, downArrow;
 
 const cells = document.querySelectorAll(".cell")
 const carousel = document.querySelector(".carousel")
@@ -153,14 +156,17 @@ up.addEventListener('click', function(){
 })
 
 
+
+
 down.addEventListener('click', function(){
 	selectIndex++;
 	spinTheWheel();
   nextSlide();
   playAudio();
 
-
 })
+
+
 
 document.addEventListener("keyup", function(event){
 	if(event.key == "ArrowDown"){
@@ -199,9 +205,47 @@ close.addEventListener("click", function(){
   doorClose()
 })
 
+// if the phone size is this big add these two arrows
+checkWidth();
+// window.addEventListener("resize", checkWidth());
 
-//
-// window.addEventListener("resize", function(){
-//
-//   }
-// })
+function checkWidth(){
+  if (window.outerWidth <= 414 || window.outerWidth <= 800){
+    console.log("mobile")
+  mobileArrows = document.createElement("div")
+  upArrow = document.createElement("img")
+  upArrow.src = "./assets/cursorup.png"
+  downArrow = document.createElement("img")
+  downArrow.src="./assets/cursordown.png"
+  mobileArrows.className = "mobile-arrows";
+
+  mobileArrows.appendChild(upArrow)
+  mobileArrows.appendChild(downArrow)
+  
+footer.appendChild(mobileArrows)
+
+upArrow.addEventListener('click', function(){
+	selectIndex--;
+	spinTheWheel();
+  prevSlide();
+  quack()
+})
+
+downArrow.addEventListener('click', function(){
+	selectIndex++;
+	spinTheWheel();
+  nextSlide();
+  playAudio();
+
+
+})
+
+
+    
+  }
+
+
+
+}
+
+
