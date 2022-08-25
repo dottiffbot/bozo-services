@@ -3,7 +3,7 @@
 $serif-font: "keroine";
 $sans-font: "alteHaas";
 $text-color: white;
-$phone-width: 500px;
+$phone-width: 800px;
 
 @mixin border($color){
 	border-radius: 5px;
@@ -73,6 +73,10 @@ $phone-width: 500px;
     border-radius: 100%;
     padding: 0 0.5em;
     text-align: center;
+    @include mq($phone-width){
+     border: none;
+    }
+    
 
   }
 
@@ -154,14 +158,15 @@ $phone-width: 500px;
     align-items: center;
   
     width: 100vw;
-    height: 100vh;
+    // height: 100vh;
     margin: 0 4em;
 
     .main-text{
       // @include border(white);
-      margin-top: 0;
+
 
         @include mq($phone-width){
+          margin: 0.5em;
 
       
     }
@@ -171,6 +176,7 @@ $phone-width: 500px;
 
     @include mq($phone-width){
       flex-direction: column;
+      justify-content: space-around;
 
     }
 
@@ -183,6 +189,10 @@ $phone-width: 500px;
       width: 50vw;
       margin: 0.5em;
       // display: flex;
+
+      h3{
+        margin-top:1em;
+      }
 
       @include flexcolumn;
       overflow-y: scroll;
@@ -238,12 +248,15 @@ $phone-width: 500px;
 
     .img{
       width:60vw;
-      overflow: hidden;
+      flex-grow: 1;
+  flex-basis: calc(50% - 20px);
+     
       // margin-top: 0.5em;
 
       @include softborder;
       @include mq($phone-width){
         width:80vw;
+        margin-bottom: 0;
   
       }
 
