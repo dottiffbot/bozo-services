@@ -124,7 +124,7 @@ input, textarea, select {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  margin: 0.2em 2em;
+  margin: 0.2em 1em;
   overflow-x: hidden;
 }
 .m-container .ex {
@@ -144,17 +144,22 @@ input, textarea, select {
   transform: rotate(90deg);
 }
 .m-container h1 {
-  font-size: 5vw;
+  font-size: 4.5em;
   font-family: "keroine";
-  margin-bottom: 1em;
   align-self: center;
   text-transform: uppercase;
   position: absolute;
   font-weight: normal;
   mix-blend-mode: difference;
-  top: 0.25em;
+  top: 0.2em;
   left: 0.5em;
   color: white;
+}
+@media (max-width: 500px) {
+  .m-container h1 {
+    font-size: 2em;
+    left: 0.85em;
+  }
 }
 .m-container h2 {
   color: white;
@@ -163,8 +168,6 @@ input, textarea, select {
   text-transform: uppercase;
 }
 .m-container h3 {
-  padding-top: 1.5em;
-  font-size: 2vw;
   color: yellowgreen;
 }
 .m-container em {
@@ -172,12 +175,21 @@ input, textarea, select {
   color: grey;
   font-style: italic;
 }
+@media (max-width: 500px) {
+  .m-container em {
+    font-size: 0.5rem;
+  }
+}
 .m-container p {
   color: white;
-  font-size: 1vw;
 }
-.m-container .description {
-  font-size: 1.25vw;
+.m-container .description p {
+  font-size: 1.25rem;
+}
+@media (max-width: 500px) {
+  .m-container .description {
+    font-size: 0.75rem;
+  }
 }
 .m-container .intro {
   display: flex;
@@ -186,6 +198,9 @@ input, textarea, select {
   width: 100vw;
   height: 100vh;
   margin: 0 4em;
+}
+.m-container .intro .main-text {
+  margin-top: 0;
 }
 @media (max-width: 500px) {
   .m-container .intro {
@@ -197,7 +212,8 @@ input, textarea, select {
 }
 .m-container .intro .text {
   color: white;
-  width: 40vw;
+  width: 50vw;
+  margin: 0.5em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -207,12 +223,11 @@ input, textarea, select {
 @media (max-width: 500px) {
   .m-container .intro .text {
     width: 80vw;
+    margin: 0;
   }
 }
 .m-container .intro .text .overview {
-  font-size: 1em;
   text-align: left;
-  margin-left: 1em;
   font-family: "keroine";
 }
 .m-container .intro .text .scope {
@@ -220,8 +235,10 @@ input, textarea, select {
   flex-direction: row;
   align-content: space-between;
   justify-content: space-around;
+  margin: 0;
 }
 .m-container .intro .text .scope p {
+  font-size: 0.75em;
   text-align: left;
 }
 .m-container .intro .text .scope .role {
@@ -231,7 +248,7 @@ input, textarea, select {
   margin: 1em;
 }
 .m-container .intro .text p {
-  padding: 1em;
+  padding: 0.5em;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -240,10 +257,10 @@ input, textarea, select {
   overflow: hidden;
   border-radius: 10px;
 }
-.m-container .intro .img img {
-  width: 80vw;
-  height: auto;
-  display: inline-block;
+@media (max-width: 500px) {
+  .m-container .intro .img {
+    width: 80vw;
+  }
 }
 .m-container .intro .img #contain {
   transform: scale(0.75);
@@ -262,23 +279,36 @@ input, textarea, select {
   align-items: center;
   justify-content: space-around;
 }
+@media (max-width: 500px) {
+  .m-container .sideby {
+    flex-direction: column;
+  }
+}
 .m-container .sideby img {
   width: 50vw;
   padding: 2em;
   flex-basis: 50%;
   flex-grow: 0;
 }
+@media (max-width: 500px) {
+  .m-container .sideby img {
+    width: 70vw;
+    padding: 0.5em;
+  }
+}
 .m-container .sideby p {
   width: 50vw;
+  font-size: 1rem;
   flex-grow: 0;
   text-align: justify;
+  flex-basis: 0.5;
   padding: 5em;
 }
 @media (max-width: 500px) {
   .m-container .sideby p {
     object-fit: scale-down;
-    padding: 0 2em;
-    font-size: 0.75rem;
+    padding: 0 0.5em;
+    width: 80vw;
   }
 }
 .m-container .sideby .room {
@@ -292,19 +322,16 @@ input, textarea, select {
 }
 .m-container .img-cont .image-full {
   width: 100vw;
-  height: auto;
+  background-color: white;
+  border-radius: 20px;
 }
 .m-container .img-cont .image-full img {
   width: 100%;
 }
-.m-container .img-cont .image-full h2 {
-  color: black;
-  background-color: white;
-  text-transform: uppercase;
-}
 .m-container .img-cont .image-full p {
   padding: 2em;
   font-size: 2em;
+  width: 100%;
   font-family: "keroine";
   text-align: center;
   color: black;

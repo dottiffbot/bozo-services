@@ -58,7 +58,7 @@ $phone-width: 500px;
 .m-container{
   line-height: 1.5;
   @include flexcolumn;
-  margin: 0.2em 2em;
+  margin: 0.2em 1em;
   overflow-x:hidden;
 
   .ex{
@@ -83,22 +83,29 @@ $phone-width: 500px;
   }
 
 
+
+
   h1{
-    font-size: 5vw;
-    // height: 20vh;
+    font-size: 4.5em;
+    // padding-bottom: 0.5em;
+  
     font-family: $serif-font;
-		// font-variant-ligatures: discretionary-ligatures;
-    margin-bottom: 1em;
+
     align-self:center;
-    // padding: 0.25em;
+
     text-transform: uppercase;
     position: absolute;
     font-weight: normal;
     mix-blend-mode: difference;
-    top: 0.25em;
+    top: 0.2em;
     left: 0.5em;
     
     color: $text-color;
+    @include mq($phone-width){
+      font-size: 2em;
+      left: 0.85em;
+
+    }
   
   }
   h2{
@@ -108,28 +115,41 @@ $phone-width: 500px;
     text-transform: uppercase;
   }
 	h3{
-		padding-top: 1.5em;
-		font-size: 2vw;
+		// padding-top: 1.5em;
+		// font-size: 3rem;
     color:yellowgreen;
 	}
   em{
     margin: 1em;
     color: grey;
     font-style: italic;
+    @include mq($phone-width){
+      font-size: 0.5rem;
+    
+    }
   }
   p{
       color: $text-color;
-      font-size: 1vw;
+      // font-size: 1em;
 
   }
 
   .description{
-    font-size: 1.25vw;
+    
+
+    p{
+      font-size: 1.25rem;
+    }
+
+    @include mq($phone-width){
+
+          font-size: 0.75rem;
+
+        }
   }
 
 .intro{
     display: flex;
-
     justify-content: center;
     align-items: center;
   
@@ -139,16 +159,18 @@ $phone-width: 500px;
 
     .main-text{
       // @include border(white);
-      // margin-top: 2em;
-    
-    
+      margin-top: 0;
+
+        @include mq($phone-width){
+
       
+    }
+    
 
     }
 
     @include mq($phone-width){
       flex-direction: column;
-
 
     }
 
@@ -158,21 +180,23 @@ $phone-width: 500px;
 
     .text{
       color: $text-color;
-      width: 40vw;
+      width: 50vw;
+      margin: 0.5em;
       // display: flex;
 
       @include flexcolumn;
       overflow-y: scroll;
 
       // @include border(white);
+
       @include mq($phone-width){
         width:80vw;
+        margin: 0;
       }
 
       .overview{
-        font-size: 1em;
         text-align: left;
-        margin-left: 1em;
+        // margin-left: 1em;
         font-family:$serif-font;
 
       }
@@ -183,15 +207,18 @@ $phone-width: 500px;
         // align-items:center;
         align-content: space-between;
         justify-content: space-around;
+        margin: 0;
   
         // @include border(white);
 
         p{
+          font-size: 0.75em;
           text-align: left;
   
         }
         .role{
           margin: 1em;
+          
         }
 
         .collaborators{
@@ -203,7 +230,7 @@ $phone-width: 500px;
 
     
       p{
-        padding: 1em;
+        padding: 0.5em;
         text-align: justify;
         text-justify: inter-word;
       }
@@ -211,22 +238,15 @@ $phone-width: 500px;
 
     .img{
       width:60vw;
-      
-      // height: 50vh;
-      // align-self: center;
       overflow: hidden;
-
+      // margin-top: 0.5em;
 
       @include softborder;
-
-      img{
+      @include mq($phone-width){
         width:80vw;
-        height: auto;
-        display: inline-block;
-
-        // height: 100%;
-        // object-fit:cover;
+  
       }
+
 
       #contain{
         transform: scale(0.75);
@@ -251,21 +271,35 @@ $phone-width: 500px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+     @include mq($phone-width){
+      flex-direction: column;
+
+
+    }
     img{
       width: 50vw;
       padding: 2em;
      flex-basis:50%;
      flex-grow: 0;
+       @include mq($phone-width){
+       width: 70vw;
+      padding: 0.5em;
+
+
+    }
     }
     p{
       width: 50vw;
+      font-size: 1rem;
       flex-grow: 0;
       text-align: justify;
+      flex-basis: 0.5;
       padding: 5em;
       @include mq($phone-width){
         object-fit: scale-down;
-        padding: 0 2em;
-        font-size: 0.75rem;
+        padding: 0 0.5em;
+        // font-size: 0.75rem;
+        width: 80vw;
 
       }
     }
@@ -280,33 +314,37 @@ $phone-width: 500px;
 
     .image-full{
       width: 100vw;
-      height: auto;
+      // height: 50vh;
+      background-color: white;
+      border-radius: 20px;
 
       img{
         width: 100%;
 
       }
-      h2{
-        color: black;
-        background-color: white;
-        text-transform: uppercase;
-      }
+      
       p{
         padding: 2em;
         font-size: 2em;
+        width: 100%;
         font-family: $serif-font;
         text-align: center;
         color: black;
         background-color: white;
+    
+
         @include mq($phone-width){
 
           font-size: 1rem;
+
 
         }
       }
     }
 
   }
+
+  
 
   }
 
