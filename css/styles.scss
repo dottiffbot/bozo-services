@@ -223,6 +223,7 @@ main{
 	position: absolute;
 	bottom: 1em;
 	left: 40%;
+	visibility: hidden;
 
 	.siteName:hover{
 
@@ -304,7 +305,7 @@ main{
 .mobile-arrows{
 	z-index: 2;
 	display: flex;
-	
+
 }
 
 

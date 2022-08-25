@@ -160,8 +160,13 @@ $phone-width: 800px;
     align-items: center;
   
     width: 100vw;
-    // height: 100vh;
+    height: 100vh;
     margin: 0 4em;
+
+    @include mq($phone-width){
+      height: auto;
+
+    }
 
     .main-text{
       // @include border(white);
@@ -169,6 +174,7 @@ $phone-width: 800px;
 
         @include mq($phone-width){
           margin: 0.5em;
+  
 
       
     }

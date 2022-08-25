@@ -52,14 +52,11 @@ const siteNames = [
 
 ]
 
-function howTo(){
-  alert ("hello, welcome to this website! I am glad you are here. a couple of things that might be helpful: you can use the arrow keys or click around to navigate. Additional project information can be found by clicking on the images. All projects with websites are linked in the title card below. Have a nice day :)")
-}
 
 
 window.addEventListener('load', function(){
-  siteName.style.visibility = "hidden"
-  moreInfo.style.visibility = "hidden"
+  // siteName.style.visibility = "hidden"
+  // moreInfo.style.visibility = "hidden"
   randomColor()
   // howTo()
 })
@@ -88,9 +85,10 @@ function spinTheWheel (){
 	let angle = selectIndex / cellCount * -360;
 	let r = Math.round( (cellWidth / 2) / Math.tan(Math.PI/ angle));
 	carousel.style.transform = 'translateZ(-488px) rotateX(' + angle + 'deg)';
+
   siteName.style.visibility = "visible"
   siteName.style.transition = "visibility 1s"
-  moreInfo.style.visibility = "visible"
+  // moreInfo.style.visibility = "visible"
 }
 
 // update info
@@ -137,10 +135,10 @@ const updateSection = function (){
     link.innerHTML = siteNames[picNum].copy
     link.target = "_blank"
 
-    details.innerHTML = siteNames[picNum].projectType
+    // details.innerHTML = siteNames[picNum].projectType
 
     siteName.appendChild(link)
-    moreInfo.appendChild(details)
+    // moreInfo.appendChild(details)
 
 randomColor()
 
