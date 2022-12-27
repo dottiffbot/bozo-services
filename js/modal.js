@@ -9,6 +9,10 @@ const beyond = document.querySelector(".beyond")
 const ftr = document.querySelector("#ftr")
 const telepresence = document.querySelector("#telepresence")
 const bubs = document.querySelector(".bubs")
+const un = document.querySelector("#un")
+const undocumenta = document.querySelector(".undocumenta")
+const invisible = document.querySelector("#invis")
+const artHandler = document.querySelector(".arthandler")
 const closeModals = document.querySelectorAll(".ex")
 
 
@@ -33,6 +37,14 @@ telepresence.addEventListener("click", function(){
 })
 spawn.addEventListener("click", function(){
   trust.classList.toggle("seen")
+
+})
+un.addEventListener("click", function(){
+  undocumenta.classList.toggle("seen")
+
+})
+invisible.addEventListener("click", function(){
+ artHandler.classList.toggle("seen")
 
 })
 
